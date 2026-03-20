@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "RupeeLetter - Connect with Financial Advisors",
-  description: "RupeeLetter is a platform that connects investors with financial advisors, providing personalized investment advice and guidance to help them achieve their financial goals.",
+  title: "RUPEELETTER - Connect with Financial Advisors",
+  description: "RUPEELETTER is a platform that connects investors with financial advisors, providing personalized investment advice and guidance to help them achieve their financial goals.",
 };
 
 export default function RootLayout({
