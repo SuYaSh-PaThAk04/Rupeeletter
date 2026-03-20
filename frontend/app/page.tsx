@@ -59,7 +59,7 @@ export default function RupeeLetterPage() {
       {/* Header */}
       <header className="w-full" style={{ backgroundColor: "#f26b6b" }}>
         <div className="max-w-7xl mx-auto px-6 py-3 flex items-center gap-4">
-          {/* Logo */}
+
           <div className="flex-shrink-0">
             <Image
               src="/White and Black Logo (1).png"
