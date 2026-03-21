@@ -10,8 +10,8 @@ const dmSans = DM_Sans({ subsets: ["latin"], weight: ["400", "500", "600", "700"
 const poppins = Poppins({ subsets: ["latin"], weight: ["400", "500", "600"] });
 
 type FormValues = {
+  fullName: string;
   phoneNumber: string;
-  email: string;
 };
 
 export default function RupeeLetterPage() {
@@ -30,10 +30,10 @@ export default function RupeeLetterPage() {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         access_key: process.env.NEXT_PUBLIC_WEB3FORMS_KEY,
-        subject: `New Advisor Request — ${data.phoneNumber}`,
+        subject: `New Advisor Request from ${data.fullName}`,
         from_name: "RupeeConnect Form",
+        fullName: data.fullName,
         phoneNumber: data.phoneNumber,
-        email: data.email,
       }),
     });
 
@@ -135,6 +135,20 @@ export default function RupeeLetterPage() {
 
             <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4" noValidate>
 
+              {/* Full Name */}
+              <div>
+                <input
+                  type="text"
+                  placeholder="Full Name"
+                  disabled={isSubmitting}
+                  className={`w-full border rounded-xl px-4 py-3.5 text-gray-700 text-base outline-none focus:ring-2 focus:ring-red-100 transition disabled:opacity-50 ${
+                    errors.fullName ? "border-red-400" : "border-gray-300 focus:border-red-400"
+                  }`}
+                  {...register("fullName", { required: "Full name is required" })}
+                />
+                {errors.fullName && <p className="mt-1 text-xs text-red-500">{errors.fullName.message}</p>}
+              </div>
+
               {/* Phone Number */}
               <div>
                 <input
@@ -153,26 +167,6 @@ export default function RupeeLetterPage() {
                   })}
                 />
                 {errors.phoneNumber && <p className="mt-1 text-xs text-red-500">{errors.phoneNumber.message}</p>}
-              </div>
-
-              {/* Email */}
-              <div>
-                <input
-                  type="email"
-                  placeholder="Email address"
-                  disabled={isSubmitting}
-                  className={`w-full border rounded-xl px-4 py-3.5 text-gray-700 text-base outline-none focus:ring-2 focus:ring-red-100 transition disabled:opacity-50 ${
-                    errors.email ? "border-red-400" : "border-gray-300 focus:border-red-400"
-                  }`}
-                  {...register("email", {
-                    required: "Email is required",
-                    pattern: {
-                      value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-                      message: "Enter a valid email address",
-                    },
-                  })}
-                />
-                {errors.email && <p className="mt-1 text-xs text-red-500">{errors.email.message}</p>}
               </div>
 
               {/* Submit */}
