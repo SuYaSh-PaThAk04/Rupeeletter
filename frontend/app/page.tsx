@@ -101,56 +101,15 @@ export default function RupeeLetterPage() {
           </div>
 
           {/* Illustration */}
-          <div className="w-full max-w-xs sm:max-w-sm md:max-w-md">
-            <svg viewBox="0 0 500 360" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto">
-              {/* Phone mockup */}
-              <rect x="160" y="20" width="155" height="285" rx="22" fill="#2d2d2d" />
-              <rect x="168" y="33" width="139" height="259" rx="15" fill="#f9f9f9" />
-              <rect x="200" y="28" width="70" height="9" rx="4" fill="#1a1a1a" />
-
-              {/* Chart on screen */}
-              <rect x="176" y="50" width="123" height="68" rx="7" fill="#fff" />
-              <polyline points="186,108 205,88 225,98 248,74 270,84 291,65"
-                fill="none" stroke="#f26b6b" strokeWidth="2.5" strokeLinejoin="round" />
-              <circle cx="248" cy="74" r="4" fill="#f26b6b" />
-              <circle cx="291" cy="65" r="4" fill="#f26b6b" />
-
-              {/* List rows */}
-              <rect x="176" y="130" width="123" height="13" rx="4" fill="#ffe0e0" />
-              <circle cx="185" cy="136" r="5" fill="#f26b6b" />
-              <rect x="176" y="152" width="95" height="9" rx="4" fill="#f0f0f0" />
-              <rect x="176" y="169" width="110" height="9" rx="4" fill="#f0f0f0" />
-              <rect x="176" y="186" width="80" height="9" rx="4" fill="#f0f0f0" />
-              <rect x="176" y="203" width="118" height="9" rx="4" fill="#f0f0f0" />
-              <rect x="176" y="220" width="90" height="9" rx="4" fill="#f0f0f0" />
-
-              {/* Home indicator */}
-              <rect x="217" y="295" width="42" height="5" rx="2.5" fill="#3d3d3d" />
-
-              {/* ── Woman (left) ── */}
-              <circle cx="88" cy="175" r="21" fill="#f4c29d" />
-              <ellipse cx="88" cy="165" rx="21" ry="13" fill="#2d1b0e" />
-              <ellipse cx="88" cy="248" rx="26" ry="56" fill="#f26b6b" />
-              <line x1="112" y1="222" x2="160" y2="205" stroke="#f4c29d" strokeWidth="10" strokeLinecap="round" />
-              <line x1="64" y1="228" x2="44" y2="245" stroke="#f4c29d" strokeWidth="10" strokeLinecap="round" />
-              <rect x="74" y="296" width="13" height="46" rx="6" fill="#2d1b0e" />
-              <rect x="92" y="296" width="13" height="46" rx="6" fill="#2d1b0e" />
-              <ellipse cx="80" cy="342" rx="11" ry="5" fill="#1a1a1a" />
-              <ellipse cx="99" cy="342" rx="11" ry="5" fill="#1a1a1a" />
-
-              {/* ── Man (right) ── */}
-              <circle cx="388" cy="178" r="23" fill="#f4c29d" />
-              <ellipse cx="388" cy="167" rx="21" ry="12" fill="#1a1a1a" />
-              <ellipse cx="388" cy="255" rx="28" ry="58" fill="#3d2b1f" />
-              <rect x="380" y="215" width="16" height="48" rx="2" fill="#f9f9f9" />
-              <polygon points="388,218 384,248 388,254 392,248" fill="#f26b6b" />
-              <line x1="360" y1="228" x2="340" y2="248" stroke="#f4c29d" strokeWidth="10" strokeLinecap="round" />
-              <line x1="416" y1="225" x2="436" y2="242" stroke="#f4c29d" strokeWidth="10" strokeLinecap="round" />
-              <rect x="372" y="305" width="14" height="48" rx="6" fill="#3d2b1f" />
-              <rect x="391" y="305" width="14" height="48" rx="6" fill="#3d2b1f" />
-              <ellipse cx="379" cy="353" rx="13" ry="5" fill="#1a1a1a" />
-              <ellipse cx="398" cy="353" rx="13" ry="5" fill="#1a1a1a" />
-            </svg>
+          <div className="w-full max-w-xs sm:max-w-sm md:max-w-lg">
+            <Image
+              src="/undraw_investor.svg"
+              alt="Investor illustration"
+              width={960}
+              height={668}
+              className="w-full h-auto"
+              priority
+            />
           </div>
         </div>
 
@@ -160,7 +119,7 @@ export default function RupeeLetterPage() {
           {/* Success banner */}
           {submitted && (
             <div className="mb-4 px-4 py-3 rounded-xl bg-green-50 border border-green-200 text-green-700 text-sm font-medium text-center">
-              ✅ Submitted! We will call you within 24 hours.
+              ✅ Submitted! We'll call you within 24 hours.
             </div>
           )}
 
@@ -239,8 +198,9 @@ export default function RupeeLetterPage() {
 
             {/* Trust note */}
             <p className="mt-4 text-xs text-gray-400 text-center leading-relaxed italic">
-              We will call you within 24 hours to connect you with a trusted advisor near you.
+              "We'll call you within 24 hours to connect you with a trusted advisor near you."
             </p>
+
             {/* Urgency line */}
             <p className="mt-3 text-xs text-center font-medium flex items-center justify-center gap-1" style={{ color: "#e53e3e" }}>
               <svg className="w-3.5 h-3.5" viewBox="0 0 20 20" fill="currentColor">
